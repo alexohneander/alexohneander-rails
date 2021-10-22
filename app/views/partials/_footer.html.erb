@@ -1,0 +1,14 @@
+<div class="container">
+  <footer class="py-3 my-4">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Home</a></li>
+      <% for  menu_item in get_menu_items().map %>
+        <li class="nav-item"><a href="<%= menu_item.url %>" class="nav-link px-2 text-muted"><%= menu_item.title %></a></li>
+      <% end  %>
+    </ul>
+    <span class="current-track">
+      <%= sanitize get_current_track() %>
+    </span>
+    <p class="text-center text-muted">© <%= DateTime.now.year %> Alexohneander</p>
+  </footer>
+</div>

@@ -1,0 +1,91 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+$dark-bg: #111;
+$dark-color: #fff;
+$dark-color-grey: #555;
+body {
+    &.dark {
+        background-color: $dark-bg;
+        color: $dark-color;
+        header {
+            .nav-link {
+                color: $dark-color;
+            }
+            span {
+                color: $dark-color;
+            }
+            .dark-mode-button {
+                background-color: rgba(68, 68, 68, 1);
+                .dark-icon {
+                    display: block;
+                }
+                .light-icon {
+                    display: none;
+                }
+                svg {
+                    color: rgba(234, 234, 234, 1);
+                }
+                &:hover {
+                    border: 1px solid rgba(234, 234, 234, 1);
+                    cursor: pointer;
+                }
+            }
+        }
+        footer {
+            .nav-link {
+                color: $dark-color !important;
+                &.text-muted {
+                    color: $dark-color;
+                }
+            }
+            .current-track {
+                p {
+                    color: $dark-color;
+                }
+            }
+        }
+    }
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+header {
+    a,
+    .nav-link {
+        color: var(--bs-body-color);
+    }
+    .dark-mode-button {
+        margin-top: 2px;
+        background-color: rgba(234, 234, 234, 1);
+        border: 1px solid transparent;
+        border-radius: .5rem;
+        width: 2.25rem;
+        height: 2.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .dark-icon {
+            display: none;
+        }
+        .light-icon {
+            display: block;
+        }
+        svg {
+            color: rgba(34, 34, 34, 1);
+        }
+        &:hover {
+            border: 1px solid rgba(34, 34, 34, 1);
+            cursor: pointer;
+        }
+    }
+}
+
+footer {
+    .current-track {
+        text-align: center;
+    }
+}
