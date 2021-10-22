@@ -1,24 +1,38 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## System dependencies
+- Ruby 3.0
+- Rails 6.1.4.1
 
-Things you may want to cover:
+## Installation
+```bash
+bundle install
+```
 
-* Ruby version
+## Configuration
 
-* System dependencies
+Es muss eine `.env` Datei angelegt werden mit diesen Variablen:
+```
+LASTFM_APIKEY=DEMO
+LASTFM_USERNAME=DEMO
+```
 
-* Configuration
+## Database initialization
 
-* Database creation
+```bash
+bundle exec rake db:migrate
+```
+```bash
+bundle exec rake db:seed
+```
 
-* Database initialization
+Bitte den default Benutzer ändern!
 
-* How to run the test suite
+**User:** admin@example.com
+**Passwort:** password
 
-* Services (job queues, cache servers, search engines, etc.)
+## Run Development Version
 
-* Deployment instructions
-
-* ...
+```bash
+bundle exec rails s
+```
