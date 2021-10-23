@@ -16,10 +16,10 @@ module Alexohneander
     #config.active_job.queue_adapter = :sidekiq
 
     config.after_initialize do
-      #empty_queue()
+      empty_queue()
 
-      #LastFmJob.perform_later
-      #ClearCurrentSongJob.set(wait: 1.hour).perform_later
+      LastFmJob.perform_later
+      ClearCurrentSongJob.set(wait: 1.hour).perform_later
     end
 
     def empty_queue
