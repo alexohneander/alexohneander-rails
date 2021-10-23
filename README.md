@@ -3,6 +3,8 @@
 ## System dependencies
 - Ruby 3.0
 - Rails 6.1.4.1
+- nodejs
+- yarn
 
 ## Installation
 ```bash
