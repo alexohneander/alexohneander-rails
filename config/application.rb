@@ -16,12 +16,22 @@ module Alexohneander
     config.active_job.queue_adapter = :sidekiq
 
     config.after_initialize do
+      # run_system_jobs when redis is connected
+      if ConnectionHelper.is_redis_connactable()
+        run_system_jobs()
+      end
+    end
+
+    # run jobs
+    def run_system_jobs
+      puts "Running system jobs..."
       empty_queue()
 
       LastFmJob.perform_later
       ClearCurrentSongJob.set(wait: 1.hour).perform_later
     end
 
+    # empty queue
     def empty_queue
       Sidekiq::Queue.new("default").clear
       Sidekiq::RetrySet.new.clear
