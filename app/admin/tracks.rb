@@ -14,5 +14,5 @@ ActiveAdmin.register Track do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
+
 end

@@ -36,3 +36,13 @@ Bitte den default Benutzer ändern!
 ```bash
 bundle exec rails s
 ```
+
+## Run Production Version
+
+```bash
+bundle exec rake db:migrate RAILS_ENV=production
+```
+
+```bash
+bundle exec rails s -e production
+```
