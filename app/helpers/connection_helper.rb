@@ -1,5 +1,5 @@
 module ConnectionHelper
-    def self.is_redis_connactable
+    def self.is_redis_available
         begin
             redis = Redis.new
             redis.ping

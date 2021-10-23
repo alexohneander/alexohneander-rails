@@ -17,7 +17,7 @@ module Alexohneander
 
     config.after_initialize do
       # run_system_jobs when redis is connected
-      if ConnectionHelper.is_redis_connactable()
+      if ConnectionHelper.is_redis_available()
         run_system_jobs()
       end
     end

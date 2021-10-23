@@ -8,9 +8,16 @@ module LastFmHelper
         output = CACHE.fetch("current_track", :expires_in => 1.minutes) do
             # Get the current track from db
             track = Track.first
-            if track.nil?
+
+            # If Redis is not available, do not take track from database.
+            if ConnectionHelper.is_redis_available
+                if track.nil?
+                    track = save_current_track_to_db()
+                end
+            else
                 track = save_current_track_to_db()
             end
+
             output = "<p><i class='fab fa-apple'></i> <b>#{track.artist} - #{track.song}</b> - Apple Music</p>"
         end
         return output
@@ -27,6 +34,7 @@ module LastFmHelper
 
         # check if track is already in db
         saved_track = Track.first
+
         if saved_track.nil?
             track.save
         else
