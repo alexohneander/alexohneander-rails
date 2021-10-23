@@ -51,8 +51,10 @@ module LastFmHelper
         
         if json.nil?
             return "No data"
+        elsif !json["error"].nil?
+          return "Error"
         end
-        
+
         # get current track
         current_track = json["recenttracks"]["track"][0]
 
