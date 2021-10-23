@@ -13,7 +13,7 @@ module Alexohneander
     config.load_defaults 6.1
 
     # Set sidekiq as the application job queue adapter
-    #config.active_job.queue_adapter = :sidekiq
+    config.active_job.queue_adapter = :sidekiq
 
     config.after_initialize do
       empty_queue()
