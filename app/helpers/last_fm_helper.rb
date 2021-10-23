@@ -49,6 +49,9 @@ module LastFmHelper
         # parse json
         json = JSON.parse(response.body)
         
+        if json.nil?
+            return "No data"
+
         # get current track
         current_track = json["recenttracks"]["track"][0]
 
